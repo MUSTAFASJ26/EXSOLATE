@@ -1,0 +1,421 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    width: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 10px;
+}
+
+/* Style for the background video container */
+.video-container {
+    position: relative;
+    width: 102%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+}
+
+/* Style for the video element */
+.video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the video */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire container */
+    opacity: 0.98; /* Makes the video 98% visible */
+    pointer-events: none; /* Prevents the video from being interactable */
+}
+
+
+
+
+/* Style for the section below the video */
+.content {
+    padding: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* General page styles */
+.page {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start; /* Enables snapping */
+    position: relative;
+}
+
+.black-bg {
+    background-color: black;
+    color: white;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    scroll-snap-type: y mandatory;
+    margin: 0;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+/* Card container */
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap onto new rows if needed */
+    justify-content: space-evenly; /* Ensures even spacing between cards */
+    align-items: center;
+    width: 95%;
+    height: 95%; /* Expand to fill more of the page */
+    gap: 20px; /* Adds space between cards */
+}
+
+.single-card .card-container {
+    justify-content: center;
+    height: 95%;
+}
+
+/* Card styles */
+/* Card styles with background image */
+/* Specific background images for each card */
+.card-community {
+    background-image: url('com1.jpg'); 
+}
+
+.card-events {
+    background-image: url('enginefrr.jpg'); 
+}
+
+.card-resource {
+    background-image: url('lamboengine.jpg'); 
+}
+
+.card-directory {
+    background-image: url('interior1.jpg');
+}
+
+.card-feedback {
+    background-image: url('customer\ service.jpg'); 
+}
+
+/* Common styles for all cards */
+.card {
+    width: 40%; /* Increase width of each card */
+    height: 45%; /* Increase height of each card */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* Center card headings */
+.card h2 {
+    text-align: center; /* Centers the heading */
+    margin-top: 35%;
+    margin-bottom: 15px; /* Optional: Add spacing below the heading */
+    font-size: 2.5rem; /* Adjust font size for emphasis */
+    font-weight: bold; /* Optional: Make the text bold */
+    color: rgb(255, 255, 255); /* Ensure it contrasts with the background */
+}
+
+/* Center card headings for bigger card */
+.card h3 {
+    text-align: center; /* Centers the heading */
+    margin-top: 25%;
+    margin-bottom: 15px; /* Optional: Add spacing below the heading */
+    font-size: 5.0rem; /* Adjust font size for emphasis */
+    font-weight: bold; /* Optional: Make the text bold */
+    color: white; /* Ensure it contrasts with the background */
+}
+
+.single-card .card {
+    width: 80%; /* Single card occupies more width */
+    height: 90%; /* Single card occupies more height */
+}
+
+/* Button styles */
+.card button {
+    align-self: center;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: unset;
+    transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+    background-color: #711414;
+}
+
+/* Logo Animation Welcome page */
+.logo-animation {
+    position: absolute;
+    top: 30%; /* Position the logo on the page */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    animation: fade-in-slide 3.0s ease-in; /* Trigger animation on load */
+    opacity: 100; /* Initial opacity for the animation */
+}
+
+/* Animating the logo itself */
+.logo-animation .logo {
+    font-size: 8rem;
+    font-weight: bold;
+    color: rgb(249, 247, 247);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-family: 'Gill Sans MT'; 
+}
+
+.logo-animation .slogan {
+    font-size: 2rem;
+    margin-top: 10px;
+    color: rgb(249, 247, 247);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    font-family: 'Calibri', sans-serif;
+}
+
+
+
+
+/* Keyframes for the animation */
+@keyframes fade-in-slide {
+    0% {
+        transform: translateX(-50%) translateY(-50px); /* Starts slightly above */
+        opacity: 0; /* Invisible */
+    }
+    100% {
+        transform: translateX(-50%) translateY(0); /* Ends at its normal position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+
+.contact-form {
+    max-width: 400px; /* Limits the form width */
+    max-block-size: 700px;
+    margin: auto;
+    display: flex;
+    flex-direction: column; /* Stacks elements vertically */
+    gap: 38px; /* Adds space between form elements */
+    z-index: 2;
+}
+
+.contact-form label {
+    font-weight: bold;
+    margin-bottom: 1px; /* Adds space below the label */
+    z-index: 2;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%; /* Makes input fields full-width */
+    padding: 10px; /* Adds padding inside the input fields */
+    border: 1px solid #282424d1; /* Light border for input fields */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box; /* Ensures padding doesn't affect total width */
+    z-index: 2;
+    color: #000000;
+    background-color: rgba(241, 238, 234, 0.616);
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allows vertical resizing of the textarea */
+    height: 100px; /* Sets an initial height for the textarea */
+    z-index: 2;
+}
+
+.contact-form button {
+    padding: 10px 20px; /* Adds padding for the button */
+    background-color: #121111; /* Button background color */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.contact-form button:hover {
+    background-color: #953131; /* Button hover color */
+    z-index: 2;
+}
+
+.contact {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 20px;
+    border-radius: 8px;
+    color: #fffffff3;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0px 0px 15px rgba(49, 47, 47, 0.906);
+    text-align: center;
+    z-index: 2;
+    opacity: 90%;
+}
+
+
+
+/* Header */
+header nav ul {
+    background-color: #030404bd; /* Keep the dark background */
+    display: flex;
+    justify-content: space-evenly; /* Center the items with even spacing */
+    padding: 25px; /* Ensure consistent padding */
+    list-style-type: none; /* Remove bullets */
+    max-width: 1550px; /* Retain max width */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for depth */
+    font-family: 'Arial Bold', sans-serif; /* Keep the font */
+    cursor: pointer;
+    position: relative; /* Helps with pseudo-elements if needed */
+    
+}
+
+
+
+header nav ul li {
+    margin: 8px;
+    z-index: 2; /* Keep z-index */
+    position: relative; /* For pseudo-elements if needed */
+}
+
+header nav ul li a {
+    color: white; /* Keep white text */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold font */
+    z-index: 2;
+    padding: 8px 15px; /* Add padding for better click area */
+    border-radius: 5px; /* Rounded corners for links */
+    transition: all 0.3s ease; /* Smooth hover effects */
+}
+
+header nav ul li a:hover {
+    color: #f4eeee; /* Change text color on hover */
+    background-color: rgba(117, 34, 34, 0.998); /* Add a subtle background on hover */
+    transform: scale(1.1); /* Slightly enlarge link */
+}
+
+
+
+
+/* Footer */
+
+.foot
+{
+    background-color: #33333300;
+    color: white;
+    text-align: center;
+    padding: 10px ;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+    display:flex;
+}
+.foot p
+{
+    margin-left: 500px;
+}
+.switch-button
+{
+    margin-left: 350px;
+    margin-right: 0px;
+}
+
+.switch-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: orange;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .switch-button:hover {
+    background-color: orangered;
+  }
+
+
+/* header logo container */
+.header-logo-container {
+    position: fixed; /* Position relative to the footer */
+    top: 6%; /* Vertically center the logo */
+    left: 12px; /* Place logo 20px from the right edge */
+    transform: translateY(-50%); /* Adjust for vertical alignment */
+    z-index: 10; /* Ensure it appears above other elements */
+}
+
+/* header logo image */
+.header-logo-container img {
+    width: 150px; /* Adjust logo size */
+    height: auto; /* Maintain aspect ratio */
+    cursor: unset; /* Change cursor to pointer on hover */
+}
+
+
+/* Load Screen */
+/* Full-screen black overlay */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black; /* Black screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears above all content */
+    animation: fadeOut 2s ease forwards; /* Automatically fades out */
+    animation-delay: 1s; /* Wait 1 second before starting the fade */
+}
+
+/* Loading logo */
+.loading-logo {
+    width: 400px; /* Adjust the logo size */
+    height: auto;
+}
+
+/* Keyframe animation for fade-out */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden; /* Ensure it's no longer interactive */
+    }
+}
